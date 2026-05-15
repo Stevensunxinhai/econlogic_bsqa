@@ -1,2 +1,9 @@
-# econlogic_bsqa
-EconLogic-BSQA is a closed-world benchmark for evaluating whether large language models can make business decisions only when sufficient evidence is available, emphasizing uncertainty-aware reasoning, abstention, and resistance to global knowledge leakage.
+# Open-source bundles
+
+| Path | Description |
+|------|-------------|
+| [`dataset/`](dataset/) | Released cleaned CSV splits (`*_clean.csv`). |
+| [`datapipeline/`](datapipeline/) | EconLogicQA → EconLogic-BSQA transformation, JSONL verification, CSV export. |
+| [`evaluation/`](evaluation/) | Zero-shot baseline evaluation on cleaned CSVs (no belief-driven protocol). |
+
+See each folder’s `README.md` for setup and commands. Do not commit API keys; use `.env` only at the repository root (see `.env.example` files under `datapipeline/` and `evaluation/`).
