@@ -2,7 +2,7 @@
 
 **EconLogic-BSQA** is a **closed-world** benchmark for evaluating whether language models can make **business decisions only when belief is sufficient**, using explicit local rules and observed events. It stresses **uncertainty-aware behavior** (when to request information or defer), **abstention from over-commitment**, and **resistance to global-knowledge leakage** when the scenario is meant to be solved from the text alone.
 
-The benchmark is built by transforming **EconLogicQA**-style event-ordering items into multi-step decision instances with gold **sufficiency** labels and A–D answer choices (commit vs. defer / request information). This repository ships **released CSV splits**, a **regeneration datapipeline** (LLM-assisted, optional), and a **zero-shot baseline evaluator** aligned with protocol §20.1.
+The benchmark is built by transforming **EconLogicQA** event-ordering items into multi-step decision instances with gold **sufficiency** labels and A–D answer choices (commit vs. defer / request information). This repository ships **released CSV splits**, a **regeneration datapipeline** (LLM-assisted, optional), and a **zero-shot baseline evaluator** aligned with protocol §20.1. The project name indicates dataset lineage and task transformation; it does not imply affiliation with, sponsorship by, or endorsement from the original EconLogicQA authors.
 
 ---
 
@@ -23,7 +23,7 @@ Additional documentation lives in each subdirectory’s `README.md`.
 The cleaned splits are **wide** CSV exports: each row includes `qa_text` (full scenario), `gold_answer` (A–D), `gold_sufficiency`, `gold_decision`, `condition_type`, provenance fields, and more. Splits are sized for reproducibility papers (order of magnitude: **hundreds** of examples per split after QC; see protocol and cleaning logic in `datapipeline/`).
 
 - **Do not commit API keys.** Use `.env` locally; see `datapipeline/.env.example` and `evaluation/.env.example`.
-- **Raw EconLogicQA redistribution** is subject to the original dataset’s license; the datapipeline accepts any directory with `train.csv`, `val.csv`, `test.csv` in the expected column format.
+- **Raw EconLogicQA redistribution** is subject to the original dataset’s license. The datapipeline accepts any directory with `train.csv`, `val.csv`, `test.csv` in the expected column format. Users should obtain source EconLogicQA data from the original release and follow its licensing terms.
 
 ---
 
@@ -71,7 +71,20 @@ If you use EconLogic-BSQA, please cite the accompanying paper or technical repor
 
 ## License
 
-This open-source bundle is intended to be distributed under the **Apache License 2.0** when published with a `LICENSE` file at the repository root (see [the project’s public repository](https://github.com/Stevensunxinhai/econlogic_bsqa) for the current license file).
+This repository uses separate licenses for software and data.
+
+- **Code license:** Source code, evaluation scripts, data-processing utilities, and other software components are licensed under the **Apache License 2.0**. See [`LICENSE`](LICENSE).
+- **Data license:** The EconLogic-BSQA benchmark dataset and associated data artifacts are derived from **EconLogicQA**, which is licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**. Accordingly, the derived benchmark dataset and associated data artifacts are released under **CC BY-NC-SA 4.0**. See [`LICENSE-DATA`](LICENSE-DATA).
+
+The data license applies to released benchmark artifacts, including files under `dataset/`, transformed examples, prompt-generated benchmark instances, prediction files, run metadata, and other data artifacts derived from or closely tied to EconLogicQA. Users must provide attribution to the original EconLogicQA authors, use the derived dataset only for non-commercial purposes unless separately authorized, distribute derivative datasets under the same license, and clearly indicate modifications.
+
+The software license does **not** relicense EconLogicQA or EconLogicQA-derived data artifacts as Apache-2.0.
+
+---
+
+## Attribution and provenance
+
+EconLogic-BSQA is a derivative benchmark constructed from EconLogicQA. Please cite the original EconLogicQA work when using this benchmark, especially when using, transforming, or contrasting with the source event-ordering task. A summary of third-party attribution and licensing notes is provided in [`NOTICE`](NOTICE).
 
 ---
 
