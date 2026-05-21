@@ -1,0 +1,30 @@
+EconLogic-BSQA NOTICE
+
+EconLogic-BSQA is a derivative benchmark constructed from EconLogicQA. The
+name "EconLogic-BSQA" is used to indicate dataset lineage and task
+transformation. It does not imply affiliation with, sponsorship by, or
+endorsement from the original EconLogicQA authors.
+
+Third-party source dataset:
+- EconLogicQA: A Question-Answering Benchmark for Evaluating Large Language
+  Models in Economic Sequential Reasoning.
+- Original authors: please cite EconLogicQA according to the authors'
+  instructions in the original release and paper.
+- Source dataset license: Creative Commons Attribution-NonCommercial-ShareAlike
+  4.0 International (CC BY-NC-SA 4.0).
+
+License separation:
+- Software components in this repository are licensed under Apache-2.0, unless
+  otherwise stated.
+- EconLogic-BSQA benchmark data and associated data artifacts derived from or
+  closely tied to EconLogicQA are licensed under CC BY-NC-SA 4.0.
+
+Modification notice:
+EconLogic-BSQA transforms source event-ordering items into closed-world
+business belief-sufficiency QA instances with abstracted entities, local rules,
+controlled evidence conditions, gold sufficiency labels, and A-D decision
+choices. The transformed dataset is not the original EconLogicQA dataset.
+
+Raw source-data access:
+Raw EconLogicQA files should be obtained from the original release and used
+according to the original dataset license and terms.
